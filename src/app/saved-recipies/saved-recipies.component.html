@@ -1,0 +1,31 @@
+<app-header></app-header>
+
+<section class="container p-0">
+    <div class="bg-success d-flex align-items-center justify-content-center" style="height: 300px;">
+        <h1 class="text-light">Recipe Collections!!!</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            @if (Recipies.length > 0) {
+            @for (recipe of Recipies; track $index) {
+            <div class="col-lg-3">
+                <div class="card my-3 p-2 d-flex justify-content-between" style="width: 12rem; height: 18rem;">
+                    <img routerLink="/view/recipe/{{recipe.recipeId}}" [src]="recipe.recipeImage" alt="image" class="img-fluid rounded" height="10rem">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4>{{recipe.recipeName}}</h4>
+                        <button class="btn" (click)="removeRecipe(recipe._id)">
+                            <i class="fa-solid fa-trash text-danger fa-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            }
+            }
+            @else {
+            <h2 class="text-center text-danger my-5">No Recipe saved yet!!!</h2>
+            }
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

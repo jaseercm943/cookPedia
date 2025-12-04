@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-lg-3">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-lg-9">
+        <h1 class="text-danger my-3">Recipe Download List</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Sl.No</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Cuisine</th>
+                    <th>Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (downloadList.length > 0) {
+                @for (recipe of downloadList; track $index; let i = $index) {
+                <tr>
+                    <td>{{i + 1}}</td>
+                    <td><img src="{{recipe.recipeImage}}" alt="image" class="rounded-circle" width="60" height="60">
+                    </td>
+                    <td>{{recipe.recipeName}}</td>
+                    <td>{{recipe.recipeCuisine}}</td>
+                    <td>{{recipe.count}}</td>
+                </tr>
+                }
+                }
+                @else {
+                    <tr><h4 class="fw-bold text-center text-danger">No Downloads Found</h4></tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

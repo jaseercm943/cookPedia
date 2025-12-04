@@ -1,0 +1,79 @@
+<app-header></app-header>
+
+<section
+    class="container bg bg-success text-light d-flex justify-content-center align-items-center flex-column text-center"
+    style="height: 400px;">
+    <h1 class="text-capitalize">contact us</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione neque ab impedit? Quis in repellat, itaque
+        pariatur laborum fugit illum quos fuga iure sed dolorem cum, ab qui corrupti commodi. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Enim praesentium, provident tempora fugiat dolor architecto ab deserunt illo sequi
+        officia dolore velit explicabo voluptatem libero. Quae deserunt beatae officiis eum. </p>
+</section>
+
+<section class="container">
+    <div class="row my-5">
+        <div class="col-md-6">
+            <h1 class="text-capitalize">get in touch</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex debitis quisquam laudantium, cumque veniam,
+                consequatur modi quam magni eius non ipsa corrupti dolor praesentium reprehenderit! Rem perspiciatis
+                omnis similique error?</p>
+
+            <div class="d-flex justify-content-start align-items-center gap-3">
+                <i class="fa-solid fa-map-location-dot fa-2xl" style="color: #07690d;"></i>
+                <div>
+                    <h4>Address</h4>
+                    <p class="text-muted">Calicut, Kerala</p>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-start align-items-center gap-3">
+                <i class="fa-solid fa-phone fa-2xl" style="color: #07690d;"></i>
+                <div>
+                    <h4>Phone Number</h4>
+                    <p class="text-muted">123456</p>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-start align-items-center gap-3">
+                <i class="fa-solid fa-envelope fa-2xl" style="color: #07690d;"></i>
+                <div>
+                    <h4>E Mail</h4>
+                    <p class="text-muted">abc&#64;gmail.com</p>
+                </div>
+            </div>
+
+            <div>
+                <hr>
+                <h1>Follow Us</h1>
+                <div class="d-flex justify-content-start align-items-center gap-3 my-4">
+                    <i class="fa-brands fa-facebook fa-2xl" style="color: #07690d;"></i>
+                    <i class="fa-brands fa-instagram fa-2xl" style="color: #07690d;"></i>
+                    <i class="fa-brands fa-twitter fa-2xl" style="color: #07690d;"></i>
+                    <i class="fa-brands fa-youtube fa-2xl" style="color: #07690d;"></i>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="col-md-6">
+            <div class="border rounded shadow p-5">
+                <h1 class="text-capitalize text-center">client testimony</h1>
+
+                <form [formGroup]="testimonyForm" (ngSubmit)="addTesimony()" class="d-flex justify-content-start align-items-center flex-column gap-3">
+                    <input formControlName="name" type="text" placeholder="Name" class="form-control">
+                    <input formControlName="email" type="text" placeholder="Email" class="form-control">
+                    <textarea formControlName="message" type="text" placeholder="Message" class="form-control"></textarea>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor illum inventore quas deserunt,
+                        dolorem, necessitatibus sapiente est consequuntur dolores recusandae fugit quam incidunt
+                        ducimus, quisquam labore odit suscipit tempora? Dicta!</p>
+
+                        <button type="submit" class="btn btn-primary ms-auto">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

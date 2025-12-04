@@ -1,0 +1,13 @@
+<section class="container">
+    <div class="d-flex justify-content-center align-items-center flex-column my-5">
+        <h1 class="display-5 fw-semibold">Login</h1>
+        <p class="fs-4">More than 100 plus Recipies from around the world</p>
+        <form [formGroup]="loginForm" (ngSubmit)="login()" class="d-flex justify-content-center align-items-center flex-column gap-3 mt-5 w-50 border border-2 p-4 rounded shadow">
+            <h1 class="my-5 fw-semibold"><i class="fa-solid fa-graduation-cap"></i> Cookpedia</h1>
+            <input formControlName="email" type="text" placeholder="E-Mail" class="form-control">
+            <input formControlName="password" type="password" placeholder="Password" class="form-control">
+            <button type="submit" class="btn btn-success w-100 mb-5">Login</button>
+        </form>
+    </div>
+</section>
+<app-footer />

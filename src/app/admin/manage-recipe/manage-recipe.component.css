@@ -1,0 +1,17 @@
+.input{
+    border: none;
+    border-bottom: 1px solid black;
+    margin: 10px;
+    outline: none;
+}
+
+select{
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+.span{
+    border: 1px solid orange;
+    color: orange;
+}

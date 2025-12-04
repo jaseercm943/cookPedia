@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-lg-3">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-lg-9">
+        <h1 class="text-danger my-3">All User List</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Sl.No</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if(allUsers.length > 0 ){
+                @for (user of allUsers; track $index; let i = $index) {
+                <tr>
+                    <td>{{i + 1}}</td>
+                    <td><img width="60" height="60" class="rounded-circle" src="{{user.profile?user.profile:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSppkoKsaYMuIoNLDH7O8ePOacLPG1mKXtEng&s'}}" alt=""></td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                </tr>
+                }
+            }
+            @else {
+                <tr><h4 class="text-center text-danger fw-bold">No Users Found</h4></tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

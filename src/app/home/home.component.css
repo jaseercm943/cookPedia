@@ -1,0 +1,22 @@
+.homeImg {
+    background-image: url('/assets/home_image.jpg');
+    height: 450px;
+    width: 100%;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.headerImage{
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

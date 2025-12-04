@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-lg-3">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-lg-9">
+        <div class="p-5">
+            <h1 class="fw-bold text-danger">All Recipe List</h1>
+            <div class="d-flex justify-content-between mt-4">
+                <button class="btn btn-primary" (click)="handleManageRecipe()">Add New Recipe</button>
+                <input type="search" class="form-control w-50" placeholder="Search by recipe name"
+                    [(ngModel)]="searchRecipe" />
+            </div>
+        </div>
+
+        <!-- table -->
+        <div class="px-5 pb-5">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col fw-bold">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Cuisine</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @for(recipe of recipeList | search : searchRecipe;track $index){
+                    <tr class="p-2">
+                        <th scope="row">{{$index+1}}</th>
+                        <td>{{recipe.name}}</td>
+                        <td><img src="{{recipe.image}}" width="50" height="50" class="rounded-circle" alt="recipe"></td>
+                        <td>{{recipe.cuisine}}</td>
+                        <td>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-primary" routerLink="/admin/recipe/{{recipe._id}}/edit"><i class="fa-solid fa-pencil "></i></button>
+                                <button class="btn btn-danger" (click)="handleRemoveRecipe(recipe._id)"><i class="fa-solid fa-trash "></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    }
+                    @if((recipeList | search:searchRecipe).length == 0){
+                    <tr>
+                        <h4 class="text-center text-danger fw-bold my-2">Recipe Not Found</h4>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<app-header></app-header>
+
+<div class="container bg-success mb-5">
+    <div class="row">
+        <div class="col-md-12 col-lg-6">
+            <h1 class="display-5 text-light text-start fw-bolder p-5">The Esiest<br>Way<br>To
+                make<br>Your<br>Favorite<br>Meal
+            </h1>
+        </div>
+        <div class="col-md-12 col-lg-6">
+            <img [src]="imageUrl" alt="image" height="100%" width="100%" class="img-fluid w-100 headerImage">
+        </div>
+    </div>
+</div>
+
+<!-- popular recipies -->
+<div class="container p-0">
+    <h1>Popular Recipes of the Week</h1>
+    <h5>Our Most popular recipies of the week</h5>
+
+    <div class="my-4">
+        <div class="row">
+            @for (recipe of allRecipes; track $index) {
+            <div class="col-lg-4 p-4">
+                <div class="card" style="width: 18rem;">
+                    <img [src]="recipe.image" class="card-img-top p-2" alt="Chapli Kebabs image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{recipe.name}}</h5>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="container my-4 p-0">
+    <div class="homeImg"></div>
+
+    <!-- <div class="w-100 p-0" style="height: 450px;">
+        <img src="/assets/home_image.jpg" class="img-fluid h-100 w-100 object-fit-cover" alt="responsive image">
+    </div> -->
+
+</div>
+
+<!-- image  -->
+<div class="container ">
+    <div class="shadow-lg row">
+        <div class="col-md-6 d-flex justify-content-center">
+        <img src="https://cdn.dribbble.com/userupload/42268338/file/original-9eeaf9bfae1a86bfd0d54a65151375a9.gif"
+            alt="" class="rounded-circle" width="500" height="500" />
+    </div>
+    <div class="col-md-6 d-flex justify-content-center align-items-center flex-column">
+        <h1>Download App</h1>
+        <p>Download the app from playstore or appstore</p>
+    </div>
+    </div>
+</div>
+
+<!-- testimonial marque -->
+<div class="testimonels-section my-4">
+    <marquee behavior="" direction="" class="d-flex">
+        <div class="d-flex gap-2 ">
+            @for(testimony of allTestimony;track $index){
+            <div class="card p-3" style="min-width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{testimony.name}}</h5>
+                    <div>
+                        <p>{{testimony.message}}</p>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </marquee>
+</div>
+
+<app-footer></app-footer>

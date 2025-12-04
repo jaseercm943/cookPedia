@@ -1,0 +1,82 @@
+<app-header></app-header>
+<section class="container">
+    <div class="row my-2">
+        <div class="col-md-6 ">
+            <a routerLink="/recipies" class="text-capitalize d-inline-block py-5">back to all recipie page</a>
+            <img [src]="recipeDetails.image" alt="image" height="100%" width="100%" class="img-fluid">
+
+            <div class="d-flex justify-content-between align-items-center py-3">
+                <button class="btn btn-success text-capitalize" (click)="downloadRecipe()">download the recipie</button>
+                <button class="btn btn-primary text-capitalize" (click)="saveRecipe()">save the recipie</button>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h1 class="text-capitalize py-3">{{recipeDetails.name}}</h1>
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h6 class="fw-semibold">Cuisine: {{recipeDetails.cuisine}}</h6>
+                <h6 class="fw-semibold">Servings: {{recipeDetails.servings}}</h6>
+                <h6 class="fw-semibold">Mode of Cooking: {{recipeDetails.difficulty}}</h6>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center py-3">
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                    <img [src]="imagePreparationTime" alt="" height="128px" width="128px">
+                    <h4 class="fw-semibold text-capitalize">preparation time</h4>
+                    <h4 class="fw-semibold">{{recipeDetails.prepTimeMinutes}} Minutes</h4>
+                </div>
+
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                    <img [src]="imageCookingTime" alt="" height="128px" width="128px">
+                    <h4 class="fw-semibold text-capitalize">cooking time</h4>
+                    <h4 class="fw-semibold">{{recipeDetails.cookTimeMinutes}} Minutes</h4>
+                </div>
+
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                    <img [src]="imageKcal" alt="" height="128px" width="128px">
+                    <h4 class="fw-semibold text-capitalize">calorie per servings</h4>
+                    <h4 class="fw-semibold">{{recipeDetails.caloriesPerServing}}</h4>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-capitalize">ingredients needed</h2>
+                <ol>
+                    @for (ingts of recipeDetails.ingredients; track $index) {
+                    <li>{{ingts}}</li>
+                    }
+                </ol>
+            </div>
+
+            <div>
+                <h2 class="text-capitalize">cooking instruction</h2>
+                <ol>
+                    @for (instruction of recipeDetails.instructions; track $index) {
+                    <li>{{instruction}}</li>
+                    }
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container">
+    <h2>Related Recipes</h2>
+    <div class="d-flex my-5">
+        @if(allRelatedRecipes.length > 0){
+
+            @for (item of allRelatedRecipes; track $index) {
+            <div class="col-lg-2">
+                <div class="p-2">
+                    <img [src]="item.image" class="img-fluid rounded" alt="">
+                    <h5>{{item.name}}</h5>
+                </div>
+            </div>
+            }
+        }
+        @else {
+        <h2 class="text-danger">No recipes found</h2>
+        }
+    </div>
+</section>
+<app-footer></app-footer>

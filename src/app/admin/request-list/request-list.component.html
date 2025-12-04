@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-lg-3">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-lg-9 p-5">
+        <h1 class="text-danger my-3">Client Feedback List</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Sl.No</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Feedback</th>
+                    <th>Action/Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if(feedbackList.length > 0 ){
+                @for (msg of feedbackList; track $index; let i = $index) {
+                <tr>
+                    <td>{{i + 1}}</td>
+                    <td>{{msg.name}}</td>
+                    <td>{{msg.email}}</td>
+                    <td>{{msg.message}}</td>
+                    <td>
+                        @if(msg.status == 'Pending'){
+                        <div>
+                            <button class="btn btn-success me-2" (click)="updateFeedbackStatus(msg._id, 'Approved')"><i
+                                    class="fa-solid fa-check"></i></button>
+                            <button class="btn btn-danger" (click)="updateFeedbackStatus(msg._id, 'Rejected')"><i
+                                    class="fa-solid fa-x"></i></button>
+                        </div>
+                        }
+                        @else {
+                        @if(msg.status=="Approved"){
+                        <div class="text-success fw-bold">{{msg.status}}</div>
+                        }
+                        @else {
+                        <div class="text-danger fw-bold">{{msg.status}}</div>
+                        }
+                        }
+                    </td>
+                </tr>
+                }
+                }
+                @else {
+                <tr>
+                    <h4 class="text-center text-danger fw-bold">No Testimonial found</h4>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

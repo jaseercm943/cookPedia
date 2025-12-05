@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  serverUrl = "https://recipie-server.onrender.com"
+  serverUrl = "https://cookpediaserver-xx6l.onrender.com"
 
   constructor(private http: HttpClient) { }
 
@@ -134,5 +134,6 @@ export class ApiService {
     })
   }
 }
+
 
 

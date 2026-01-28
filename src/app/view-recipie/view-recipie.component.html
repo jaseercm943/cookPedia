@@ -3,7 +3,7 @@
     <div class="row my-2">
         <div class="col-md-6 ">
             <a routerLink="/recipies" class="text-capitalize d-inline-block py-5">back to all recipie page</a>
-            <img [src]="recipeDetails.image" alt="image" height="100%" width="100%" class="img-fluid">
+            <img (click)="viewRecipe(recipeDetails?._id)" [src]="recipeDetails.image" alt="image" height="100%" width="100%" class="img-fluid">
 
             <div class="d-flex justify-content-between align-items-center py-3">
                 <button class="btn btn-success text-capitalize" (click)="downloadRecipe()">download the recipie</button>
@@ -79,4 +79,5 @@
         }
     </div>
 </section>
+
 <app-footer></app-footer>

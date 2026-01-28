@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, RouterLink } from "@angular/router";
+import { ActivatedRoute, RouterLink,Router } from "@angular/router";
 import { FooterComponent } from '../footer/footer.component';
 import { ApiService } from '../services/api.service';
 import { HeaderComponent } from '../header/header.component';
@@ -22,7 +22,7 @@ export class ViewRecipieComponent {
   recipeDetails: any
   allRelatedRecipes: any = []
 
-  constructor(private ar: ActivatedRoute, private api: ApiService) { }
+  constructor(private ar: ActivatedRoute, private api: ApiService,private router:Router) { }
 
   ngOnInit() {
     // path parameter
@@ -109,5 +109,6 @@ export class ViewRecipieComponent {
 
   }
 }
+
 
 

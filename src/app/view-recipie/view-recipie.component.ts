@@ -98,4 +98,14 @@ export class ViewRecipieComponent {
       this.generatePDF()
     })
   }
+   viewRecipe(id: string) {
+    console.log(id)
+    if (sessionStorage.getItem('token')) {
+      this.router.navigateByUrl(`/view/recipe/${id}`)
+    } else {
+      alert("Please login to get full access")
+    }
+
+  }
 }
+

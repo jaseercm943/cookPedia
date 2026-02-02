@@ -68,7 +68,7 @@
             @for (item of allRelatedRecipes; track $index) {
             <div class="col-lg-2">
                 <div class="p-2">
-                    <img (click)="viewRecipe(item?._id,items?.cuisine)" [src]="item.image" class="img-fluid rounded" alt="">
+                    <img (click)="viewRecipe(item?._id,item?.cuisine)" [src]="item.image" class="img-fluid rounded" alt="">
                     <h5>{{item.name}}</h5>
                 </div>
             </div>
@@ -81,6 +81,7 @@
 </section>
 
 <app-footer></app-footer>
+
 
 
 
